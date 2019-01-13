@@ -5,4 +5,4 @@ this script gives the current list of books , their author , and their rating
 test2.py is the latest scraped version which gives the full_detail
  
 
-Scrape_test2.csv shows how it is extracted
+Scrape_test.csv shows how it is extracted
