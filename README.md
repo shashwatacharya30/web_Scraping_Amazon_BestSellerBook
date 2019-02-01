@@ -8,8 +8,9 @@ This script gives the name of the book and its details such as pages, publicatio
 
 3) Clone the repository and open the terminal in cloned directory then install all the required dependencies from requirements.txt.
     
-     pip install -r requirements.txt 
-4) run the .py     
+         pip install -r requirements.txt 
+
+4) run the amazon_books_scraping.py script     
     
     
  
