@@ -1,8 +1,15 @@
 # web_Scraping_Amazon_BestSellerBook
-this is the scrape which scrapes the amazon best selling books 
-this script gives the current list of books , their author , and their rating
+This script gives the name of the book and its details such as pages, publications, its author, etc from amazon best seller category
 
-test2.py is the latest scraped version which gives the full_detail
+# Execution
+
+1) Download and install [Python Version 3.7.1](https://www.python.org/downloads/release/python-371/)
+2) Download the chromedriver and place in /usr/local/bin 
+
+3) Clone the repository and open the terminal in cloned directory then install all the required dependencies from requirements.txt.
+    
+     pip install -r requirements.txt 
+4) run the .py     
+    
+    
  
-
-Scrape_test.csv shows how it is extracted
