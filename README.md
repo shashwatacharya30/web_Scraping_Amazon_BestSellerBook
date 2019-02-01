@@ -10,7 +10,17 @@ This script gives the name of the book and its details such as pages, publicatio
     
          pip install -r requirements.txt 
 
-4) run the amazon_books_scraping.py script     
-    
+4) run the amazon_books_scraping.py script 
+
+        python amazon_books_scraping.py
+
+5) to run the command headlessly
+
+        python amazon_books_scraping.py --headless
+        
+6) all the data are stored  in the csv file made by the script itself
+        
+   
+ 
     
  
