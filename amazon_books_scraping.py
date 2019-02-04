@@ -1,26 +1,29 @@
 from selenium import webdriver 
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options
 import time
 import random
 import csv
+import os
 
-from bs4 import BeautifulSoup as soup
+options = Options()
+options.headless = True 
+timestamp = time.time()
 
-csv_file = open('scraping_books.csv', 'w')
+
+path = r'./data'
+if not os.path.exists(path):
+    os.makedirs(path)
+
+csv_file = open('./data/'+str(timestamp)+'scraping_books.csv', 'w')
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(['BOOK_Author', 'BOOK_NAME', 'Publisher', 'Language', 'Other Details'])
 
-driver = webdriver.Firefox()
+driver = webdriver.Firefox(options = options)
 
 driver.get("https://www.amazon.com/best-sellers-books-Amazon/zgbs/books")
 
-
-
-
-my_url = "https://www.amazon.com/best-sellers-books-Amazon/zgbs/books"
-
-amazon = "https://www.amazon.com"
 
 
 for x in range(1,45):
@@ -50,13 +53,13 @@ for x in range(1,45):
         if (x==4):
             x = x+2
 
+        time.sleep(random.randint(1,8))
 
-        """
-        book_link = driver.find_element(By.CLASS_NAME, 'a-link-normal').get_attribute("href")
-        driver.get(book_link)
-        pub = driver.find_element(By.CSS_SELECTOR, 'td.bucket > div:nth-child(2) > ul:nth-child(1) > li:nth-child(2) > b:nth-child(1)').text
-        print(pub)
-        """
+        review = driver.find_elements_by_xpath('/html/body/div[2]/div[1]/div[4]/div[30]/div/div[2]/div/div[2]/span[3]/div/div/div[3]/div[3]/div/div[1]/div/div/div[4]/span/div/div[1]')
+        
+        for reviews in review:
+            
+            print(reviews.text)
 
         csv_writer.writerow([book_author,book_name,pub,lan,pd])
 
@@ -66,6 +69,7 @@ for x in range(1,45):
         print(e)
 
 
+csv_file.close()
 
 driver.quit()
 
